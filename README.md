@@ -20,6 +20,7 @@ git clone git@github.com:bcvsolutions/podman-compose-rpm.git
 
 
 To build package of podman compose run rpm build with specfile:
+Build process need access to podman-compose repository(https://github.com/containers/podman-compose) to download newest release.
 
 <code>
 rpmbuild -ba podman-compose-rpm/podman-compose.spec
