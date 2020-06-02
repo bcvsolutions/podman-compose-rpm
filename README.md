@@ -11,28 +11,39 @@ Author of spec file:    Ludek Urban <ludek.urban@bcvsolutions.eu>
 
 ### Build
 
-To build package of podman compose run:
-`
-rpmbuild -ba podman-compose.spec
-`
+For build podman-compose-rpm you need to have installed these packages: rpmbuild, wget, gunzip.
+For the first step clone repository:
 
-SPEC file dowloads executable file from https://github.com/containers/podman-compose
+<code>
+git clone git@github.com:bcvsolutions/podman-compose-rpm.git
+</code>
+
+
+To build package of podman compose run rpm build with specfile:
+
+<code>
+rpmbuild -ba podman-compose-rpm/podman-compose.spec
+</code>
 
 Final rpm package will be in this path(default):
-`
-/root/rpmbuild/RPMS/x86_64/podman-compose-%{version}.x86_64.rpm
-`
+
+<code>
+~/rpmbuild/RPMS/x86_64/podman-compose-%{PODMAN-COMPOSE_VERSION}-%{RPM_VERSION}.x86_64.rpm
+</code>
 
 ### Instalation
 For instalation or update just run
-`
-yum install podman-compose-0.1.5-1.x86_64.rpm
-`
+
+<code>
+yum install podman-compose-%{PODMAN-COMPOSE_VERSION}-%{RPM_VERSION}.x86_64.rpm
+</code>
+
+
 For uninstalation run:
 
-`
+<code>
 yum remove podman-compose
-`
+</code>
 
 ### Usage
 Executable file will be instalated to
