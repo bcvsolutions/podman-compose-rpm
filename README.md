@@ -3,7 +3,9 @@ RPM packaging for podman-compose on RHEL8/CentOS8. RPM package contains podman-c
 You can install RPM package or build it yourself by using specfile.
 
 Podman-compose version: 0.1.5
-Packge version: 1
+
+Packge version: 1.1
+
 Author of spec file:    Ludek Urban <ludek.urban@bcvsolutions.eu>
 
 
