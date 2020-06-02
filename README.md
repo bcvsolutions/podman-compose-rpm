@@ -46,7 +46,8 @@ yum remove podman-compose
 </code>
 
 ### Usage
-Executable file will be instalated to
-`
+Executable file will be this path
+
+<code>
 /usr/bin/podman-compose
-`
+</code>
