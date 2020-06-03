@@ -26,21 +26,26 @@ Build process need access to podman-compose repository(https://github.com/contai
 rpmbuild -ba podman-compose-rpm/podman-compose.spec
 </code>
 
-Final rpm package will be in this path(default):
+Final rpm package will be in this directory:
 <br>
 <code>
-~/rpmbuild/RPMS/x86_64/podman-compose-%{PODMAN-COMPOSE_VERSION}-%{RPM_VERSION}.x86_64.rpm
+~/rpmbuild/RPMS/x86_64/
 </code>
 
-### Instalation
-For instalation or update just run
+### Installation
+For installation or update just run(example version):
 <br>
 <code>
-yum install podman-compose-%{PODMAN-COMPOSE_VERSION}-%{RPM_VERSION}.x86_64.rpm
+yum install podman-compose-0.1.5-1.1.x86_64.rpm
 </code>
 
+For update run(example version):
+<br>
+<code>
+yum update podman-compose-0.1.5-1.1.x86_64.rpm
+</code>
 
-For uninstalation run:
+For uninstallation run:
 <br>
 <code>
 yum remove podman-compose
