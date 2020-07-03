@@ -1,10 +1,11 @@
 Name:           podman-compose
 Version:        0.1.5
-Release:        1.1
+Release:        1.2
 Summary:        Package for docker-compose.
 Group:          Applications/Tools
 License:        GNU 2.0
 URL:            https://github.com/containers/podman-compose
+Patch0:		podman-compose-0.1.5-stop.patch
 Packager:       Ludek Urban
 BuildRoot:      "%{_tmppath}/podman-compose-build-root"
 Requires:	python3, podman, python3-pyyaml
@@ -14,6 +15,7 @@ Requires:	python3, podman, python3-pyyaml
 Package for podman-compose which is for configuring podman images using compose file.
 
 %prep
+
 # we have no source, so nothing here
 
 %build
@@ -24,7 +26,7 @@ mv podman-compose-%{version}/podman_compose.py %{name}
 mv podman-compose-%{version}/README.md README.md
 mv podman-compose-%{version}/docs docs
 mv podman-compose-%{version}/LICENSE LICENSE
-
+%patch0
 
 %install
 
