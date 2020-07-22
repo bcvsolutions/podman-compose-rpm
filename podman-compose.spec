@@ -15,10 +15,6 @@ Requires:	python3, podman, python3-pyyaml
 Package for podman-compose which is for configuring podman images using compose file.
 
 %prep
-
-# we have no source, so nothing here
-
-%build
 wget https://github.com/containers/podman-compose/archive/v%{version}.tar.gz -O podman-compose-%{version}.tar.gz
 gunzip podman-compose-%{version}.tar.gz
 tar -xf podman-compose-%{version}.tar
@@ -28,8 +24,10 @@ mv podman-compose-%{version}/docs docs
 mv podman-compose-%{version}/LICENSE LICENSE
 %patch0
 
-%install
+%build
+# we have no source, so nothing here
 
+%install
 # main script
 mkdir -p %{buildroot}/usr/bin/
 install -m 755 %{name} %{buildroot}/usr/bin/%{name}
@@ -47,13 +45,20 @@ install -m 644 LICENSE %{buildroot}/usr/share/licenses/podman-compose/LICENSE
 %license LICENSE
 /usr/bin/%{name}
 
-
 %clean
-#we not use clean
+rm podman-compose-%{version}.tar
+rm %{name}
+rm README.md
+rm -rf docs
+rm LICENSE
+rm -rf podman-compose-%{version}
 
 %changelog
 
-* Tue May 12 2020 Ludek Urban <ludek.urban@bcvsolutions.eu> 0.1.5
+* Wed Jul 22 2020 Ludek Urban <ludek.urban@bcvsolutions.eu> 0.1.5-1.2
+- added patche fix "podman-compose stop" and clean prp files
+
+* Tue May 12 2020 Ludek Urban <ludek.urban@bcvsolutions.eu> 0.1.5-1.1
 - added README and licence file to package
 
 * Fri Mar 6 2020 Ludek Urban <ludek.urban@bcvsolutions.eu> 0.1.5
