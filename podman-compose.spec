@@ -25,7 +25,7 @@ mv podman-compose-%{version}/LICENSE LICENSE
 %patch0
 
 %build
-# we have no source, so nothing here
+# It's just a script. It's not need to build that so nothing here.
 
 %install
 # main script
